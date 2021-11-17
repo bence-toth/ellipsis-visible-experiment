@@ -1,0 +1,57 @@
+.ellipsisWrapper {
+  display: flex;
+}
+
+.indicators {
+  border: 1px solid transparent;
+  padding: 10px;
+  width: 80px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.indicators[data-big="false"] {
+  width: 160px;
+}
+
+.indicators p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis {
+  border: 1px solid hsl(0, 0%, 50%);
+  padding: 10px;
+  width: 600px;
+  transition: width 2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ellipsis[data-big="false"] {
+  width: 160px;
+}
+
+.ellipsis p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis .flex {
+  display: flex;
+}
+
+.ellipsis .flex p {
+  flex-shrink: 1;
+}
+
+.ellipsis .flex .fixed {
+  white-space: nowrap;
+  flex-grow: 1;
+  text-align: right;
+}
