@@ -1,6 +1,9 @@
+import { useEllipsisVisible } from "./useEllipsisVisible";
+
 import "./Ellipsis.css";
 
 const Ellipsis = () => {
+  useEllipsisVisible();
   return (
     <>
       <div className="indicators">
