@@ -1,19 +1,11 @@
-.ellipsisWrapper {
-  display: flex;
-}
-
 .indicators {
   border: 1px solid transparent;
   padding: 10px;
-  width: 80px;
+  width: 100px;
   text-align: right;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.indicators[data-big="false"] {
-  width: 160px;
 }
 
 .indicators p {
@@ -25,15 +17,12 @@
 .ellipsis {
   border: 1px solid hsl(0, 0%, 50%);
   padding: 10px;
-  width: 600px;
-  transition: width 2s;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.ellipsis[data-big="false"] {
-  width: 160px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  max-width: calc(100% - 100px);
 }
 
 .ellipsis p {

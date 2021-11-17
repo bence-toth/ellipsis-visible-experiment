@@ -7,7 +7,7 @@ import "./App.css";
 const App = () => {
   const [isEllipsisBig, setIsEllipsisBig] = useState(true);
   return (
-    <div className="App">
+    <div className="App" data-big={isEllipsisBig}>
       <button
         className="toggleButton"
         onClick={() => {
@@ -16,7 +16,9 @@ const App = () => {
       >
         Toggle container size
       </button>
-      <Ellipsis isBig={isEllipsisBig} />
+      <div className="ellipsisWrapper" data-big={isEllipsisBig}>
+        <Ellipsis />
+      </div>
     </div>
   );
 };

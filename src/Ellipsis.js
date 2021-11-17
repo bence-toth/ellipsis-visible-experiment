@@ -1,15 +1,15 @@
 import "./Ellipsis.css";
 
-const Ellipsis = ({ isBig }) => {
+const Ellipsis = () => {
   return (
-    <div className="ellipsisWrapper">
+    <>
       <div className="indicators">
         <p>Visible</p>
         <p>Visible</p>
         <p>Visible</p>
         <p>Visible</p>
       </div>
-      <div className="ellipsis" data-big={isBig}>
+      <div className="ellipsis">
         <p>Something relatively short</p>
         <p>Something which is slightly longer</p>
         <p>Something very very very very very very very very long here</p>
@@ -18,7 +18,7 @@ const Ellipsis = ({ isBig }) => {
           <div className="fixed">Something else</div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

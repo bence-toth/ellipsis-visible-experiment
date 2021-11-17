@@ -5,4 +5,17 @@
   transform: translateX(-50%);
   cursor: pointer;
   padding: 10px;
+  background-color: hsl(0, 0%, 90%);
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 5px;
+}
+
+.ellipsisWrapper {
+  display: flex;
+  width: 800px;
+  transition: width 2s;
+}
+
+.ellipsisWrapper[data-big="false"] {
+  width: 300px;
 }
