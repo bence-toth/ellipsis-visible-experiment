@@ -7,7 +7,9 @@ const useEllipsisVisibleWrapper = () => {
   const [wrapperNodeWidth, setWrapperNodeWidth] = useState(null);
 
   const wrapperRef = useCallback((node) => {
-    setWrapperNode(node);
+    if (node instanceof HTMLElement) {
+      setWrapperNode(node);
+    }
   }, []);
 
   useEffect(() => {
@@ -32,15 +34,28 @@ const useEllipsisVisibleWrapper = () => {
     };
   }, [wrapperNode]);
 
-  return { wrapperNodeWidth, wrapperRef };
+  return [wrapperNodeWidth, wrapperRef];
 };
 
 const useEllipsisVisible = () => {
+  const [overflowingNode, setOverflowingNode] = useState(null);
+  const [isEllipsisVisible, setEllipsisVisible] = useState(false);
   const wrapperNodeWidth = useContext(EllipsisVisibleWrapperWidthContext);
+  const ellipsisVisibleRef = useCallback((node) => {
+    if (node instanceof HTMLElement) {
+      setOverflowingNode(node);
+    }
+  }, []);
 
   useEffect(() => {
-    console.log(wrapperNodeWidth);
-  }, [wrapperNodeWidth]);
+    if (wrapperNodeWidth !== null && overflowingNode instanceof HTMLElement) {
+      setEllipsisVisible(
+        overflowingNode.scrollWidth > overflowingNode.offsetWidth
+      );
+    }
+  }, [overflowingNode, wrapperNodeWidth]);
+
+  return [isEllipsisVisible, ellipsisVisibleRef];
 };
 
 export {

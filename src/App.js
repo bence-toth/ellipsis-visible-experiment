@@ -12,7 +12,7 @@ import "./App.css";
 const App = () => {
   const [isEllipsisBig, setIsEllipsisBig] = useState(true);
 
-  const { wrapperRef, wrapperNodeWidth } = useEllipsisVisibleWrapper();
+  const [wrapperNodeWidth, wrapperRef] = useEllipsisVisibleWrapper();
 
   return (
     <div className="App" data-big={isEllipsisBig} ref={wrapperRef}>
