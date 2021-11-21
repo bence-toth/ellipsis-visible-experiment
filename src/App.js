@@ -1,11 +1,10 @@
 import { useState } from "react";
-
-import Ellipsis from "./Ellipsis";
-
 import {
   useEllipsisVisibleWrapper,
   EllipsisVisibleWrapperWidthContext,
-} from "./useEllipsisVisible";
+} from "react-hook-text-overflow";
+
+import Ellipsis from "./Ellipsis";
 
 import "./App.css";
 

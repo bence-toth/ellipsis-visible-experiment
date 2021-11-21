@@ -1,4 +1,4 @@
-import { useEllipsisVisible } from "./useEllipsisVisible";
+import { useEllipsisVisible } from "react-hook-text-overflow";
 
 import "./Ellipsis.css";
 
